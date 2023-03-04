@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Squat",
+    "sets": 3,
+    "reps": 12,
+    "weight": 10,
+    "time": null,
+    "rest": 90,
+    "notes": ""
+  },
+
+  {
+    "id": 2,
+    "name": "Dumbbell Bench Press",
+    "sets": 3,
+    "reps": 12,
+    "weight": 10,
+    "time": null,
+    "rest": 30,
+    "notes": ""
+  },
+  {
+    "id": 3,
+    "name": "Overhead Press",
+    "sets": 3,
+    "reps": 12,
+    "weight": 8.75,
+    "time": null,
+    "rest": 180,
+    "notes": ""
+  }
+]

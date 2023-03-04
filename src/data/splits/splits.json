@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "split": "Rest",
+    "sessions": []
+  },
+
+  {
+    "id": 2,
+    "split": "Push",
+    "period": "week",
+    "sessions": [
+      [
+        {
+          "exercise": 1,
+          "sets": 3,
+          "reps": 12,
+          "weight": 20,
+          "time": null,
+          "rest": 90,
+          "supersets": []
+        },
+        {
+          "exercise": 2,
+          "sets": 3,
+          "reps": 6,
+          "weight": 15,
+          "time": null,
+          "rest": 60,
+          "supersets": []
+        }
+      ],
+      [
+        {
+          "exercise": 1,
+          "sets": 3,
+          "reps": 12,
+          "weight": 10,
+          "time": null,
+          "rest": 90,
+          "supersets": []
+        },
+        {
+          "exercise": 2,
+          "sets": 3,
+          "reps": 6,
+          "weight": 15,
+          "time": null,
+          "rest": 60,
+          "supersets": []
+        }
+      ]
+    ]
+  },
+
+  {
+    "id": 3,
+    "split": "Pull",
+    "period": "week",
+    "sessions": [
+      [
+        {
+          "exercise": 2,
+          "sets": 3,
+          "reps": 8,
+          "weight": 10,
+          "time": null,
+          "rest": 90,
+          "supersets": []
+        },
+        {
+          "exercise": 3,
+          "sets": 3,
+          "reps": 8,
+          "weight": 15,
+          "time": null,
+          "rest": 60,
+          "supersets": []
+        }
+      ],
+      [
+        {
+          "exercise": 2,
+          "sets": 3,
+          "reps": 8,
+          "weight": 20,
+          "time": null,
+          "rest": 90,
+          "supersets": []
+        },
+        {
+          "exercise": 3,
+          "sets": 3,
+          "reps": 8,
+          "weight": 15,
+          "time": null,
+          "rest": 60,
+          "supersets": []
+        }
+      ]
+    ]
+  }
+]

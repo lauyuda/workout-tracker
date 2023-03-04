@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "program": "Rest",
+    "splits": [1]
+  },
+  {
+    "id": 2,
+    "program": "Hypertrophy",
+    "author": "Jeff",
+    "splits": [2, 3],
+    "units": ["sets", "reps", "weight", "rest"]
+  }
+]
