@@ -1,6 +1,14 @@
 import { Exercise } from './exercise';
 
-export const Superset = ({ supersetExercises, selectedDay = null }: any) => {
+type Exercise = { exercise: any };
+
+export const Superset = ({
+  supersetExercises,
+  selectedDay = null,
+}: {
+  supersetExercises: Exercise[];
+  selectedDay: any;
+}) => {
   return (
     <div className="border rounded">
       {supersetExercises?.map((supersetExercise) => {
