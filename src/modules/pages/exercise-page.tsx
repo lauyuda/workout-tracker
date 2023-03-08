@@ -1,20 +1,16 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { GoBackButton } from '../common/components/go-back-button';
-import { getExercises } from '../data/constants/get-exercises';
+import { useExercisesContext } from '../data/hooks/exercises-context';
 import { NavBar } from '../navbar/components/navbar';
 
 export const ExercisePage: NextPage = () => {
-  const exercises = getExercises();
+  const { exercises } = useExercisesContext();
   const router = useRouter();
   const { exerciseId } = router.query;
   const exerciseInfo = exercises.find(
     (exercise) => exercise.id === Number(exerciseId)
   );
-
-  console.log('exerciseId', exerciseId);
-  console.log('exercises', exercises);
-  console.log('exerciseInfo', exerciseInfo);
 
   //   const workoutSplitExercises = workoutSplit?.exercises?.map(
   //     (splitExercise) => {

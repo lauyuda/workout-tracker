@@ -3,3 +3,9 @@ export enum ShowState {
   NAME = 'NAME',
   SETS = 'SETS',
 }
+
+export enum ExerciseType {
+  BAR = 'bar',
+  WEIGHTS = 'weights',
+  BODYWEIGHT = 'bodyweight',
+}

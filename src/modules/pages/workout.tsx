@@ -2,11 +2,12 @@ import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { useEffect, useState } from 'react';
 import { CustomShortcut } from '../common/type';
-import { getExercises } from '../data/constants/get-exercises';
 import { getPrograms } from '../data/constants/get-programs';
 import { getSplits } from '../data/constants/get-splits';
 import { getWorkouts } from '../data/constants/get-workouts';
+import { useExercisesContext } from '../data/hooks/exercises-context';
 import { Exercise } from '../exercise/components/exercise';
+import { Superset } from '../exercise/components/superset';
 import { NavBar } from '../navbar/components/navbar';
 
 enum Day {
@@ -17,17 +18,20 @@ enum Day {
   'FIVE' = 5,
 }
 const DAYS = [Day.ONE, Day.TWO, Day.THREE, Day.FOUR, Day.FIVE];
+const DAY_OFFSET = 2;
+const TODAY = new Date().getDay() - DAY_OFFSET;
 
 export const Workout: NextPage = () => {
   const router = useRouter();
   const { selectedDay: _selectedDay } = router?.query;
-  const [selectedDay, setSelectedDay] = useState(
-    Number(_selectedDay ?? Day.ONE)
-  );
+  console.log('new Date().getDay()', new Date().getDay());
+  console.log('_selectedDay', _selectedDay ?? TODAY);
+  const [selectedDay, setSelectedDay] = useState(Number(_selectedDay ?? TODAY));
+
   const workouts = getWorkouts();
   const programs = getPrograms();
   const splits = getSplits();
-  const exercises = getExercises();
+  const { exercises } = useExercisesContext();
 
   const selectedWorkout = workouts.find((workout) => {
     return workout.day === selectedDay;
@@ -40,10 +44,6 @@ export const Workout: NextPage = () => {
     return split.id === selectedWorkout?.split;
   });
   const currentSplitSession = workoutSplit?.sessions?.[0];
-  // const sessionInfo = currentSplitSession?.map(exercise=>{return})
-
-  console.log('currentSplitSession', currentSplitSession);
-  const [isShowExerciseName, setIsShowExerciseName] = useState(true);
 
   const daySelectionShortcutHandler = (e: KeyboardEvent) => {
     if (e.key === CustomShortcut.DAY_ONE) {
@@ -78,12 +78,6 @@ export const Workout: NextPage = () => {
 
   return (
     <div>
-      {/* <input
-        className="border"
-        onKeyDown={(event) => {
-          event.stopPropagation();
-        }}
-      /> */}
       <NavBar />
       <div className="py-4 px-4 space-x-3">
         {DAYS.map((day) => {
@@ -120,31 +114,33 @@ export const Workout: NextPage = () => {
         <div className="mt-5 mx-5 space-y-2">
           <div>Selected exercises: </div>
           {currentSplitSession?.map((splitExercise) => {
-            const { exercise: exerciseId } = splitExercise;
+            const { exercise: exerciseId, superset } = splitExercise;
             const name = exercises.find(
               (exercise) => exercise.id === exerciseId
             )?.name;
 
+            const hasSuperset = superset.length > 0;
+            if (!hasSuperset) {
+              return (
+                <Exercise
+                  key={exerciseId}
+                  exercise={splitExercise}
+                  selectedDay={selectedDay}
+                />
+              );
+            }
+
+            const supersetExercises = [splitExercise, ...superset];
             return (
-              <Exercise
+              <Superset
                 key={exerciseId}
-                exercise={splitExercise}
-                isShowExerciseName={isShowExerciseName}
+                supersetExercises={supersetExercises}
                 selectedDay={selectedDay}
               />
             );
           })}
         </div>
       )}
-      <button
-        className="absolute bottom-0 right-0 h-10 w-20 border flex items-center justify-center"
-        // onMouseDown={() => setIsShow(true)}
-        // onMouseUp={() => setIsShow(false)}
-        onTouchStart={() => setIsShowExerciseName(false)}
-        onTouchEnd={() => setIsShowExerciseName(true)}
-      >
-        Toggle
-      </button>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import { getExercises } from '@/modules/data/constants/get-exercises';
 import { Session } from '@/modules/session/components/session';
 
 export const Split = ({ split, splitSessions }: any) => {

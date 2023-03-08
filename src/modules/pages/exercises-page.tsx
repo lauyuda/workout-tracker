@@ -1,12 +1,10 @@
-import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import { getExercises } from '../data/constants/get-exercises';
+import { useExercisesContext } from '../data/hooks/exercises-context';
 import { Exercise } from '../exercise/components/exercise';
 import { NavBar } from '../navbar/components/navbar';
 
 export const ExercisesPage: NextPage = () => {
-  const exercises = getExercises();
-  const router = useRouter();
+  const { exercises } = useExercisesContext();
 
   return (
     <div>

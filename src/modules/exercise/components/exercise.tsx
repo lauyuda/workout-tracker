@@ -1,23 +1,27 @@
-import { getExercises } from '@/modules/data/constants/get-exercises';
+import { useExercisesContext } from '@/modules/data/hooks/exercises-context';
 import { useRouter } from 'next/router';
-import { ExerciseDetail } from './exercise-detail';
+import { useState } from 'react';
+import { ExerciseDetails } from './exercise-details';
 
 export const Exercise = ({
   exercise,
-  isShowExerciseName = true,
   selectedDay = null,
+  isSuperset = false,
 }: any) => {
   const router = useRouter();
-  const { exercise: exerciseId, id, name, sets, reps, weight, rest } = exercise;
-  const exercises = getExercises();
+  const {
+    exercise: exerciseId,
+    id,
+    name,
+    sets,
+    reps,
+    weight,
+    rest,
+    superset,
+  } = exercise;
+  const { exercises } = useExercisesContext();
 
-  console.log('exerccise', exercise);
-  console.log('router.pathname', router.pathname);
-  console.log('router.query', router.query);
-  console.log('router.locale', router.locale);
-  console.log('router.asPath', router.asPath);
-
-  const { programId } = router?.query;
+  const [isShowExerciseName, setIsShowExerciseName] = useState(true);
 
   const exerciseName = Boolean(name)
     ? name
@@ -32,27 +36,40 @@ export const Exercise = ({
     });
   };
 
+  console.log('superset', superset, exercise);
+
   return (
-    <button
-      className="w-full flex border py-3 px-5 rounded bg-blue-100"
-      onClick={() => navigateToExercise()}
-    >
-      {isShowExerciseName && (
-        <div className="w-64 flex flex-col items-start">
-          <div className="text-xs text-gray-500">Id {exerciseId ?? id}</div>
-          <div className="truncate">{exerciseName}</div>
-        </div>
-      )}
-      <div
-        className={`flex space-x-5 ${
-          isShowExerciseName ? 'invisible md:visible' : ''
-        }`}
+    <div className={`flex ${isSuperset ? '' : 'border rounded'}`}>
+      <div className={`w-2 ${isSuperset ? 'bg-green-300' : 'bg-blue-100'}`} />
+      <button
+        className="w-full flex p-3 bg-blue-100"
+        onClick={() => {
+          setIsShowExerciseName((show) => !show);
+        }}
       >
-        <ExerciseDetail label="Sets" value={sets} />
-        <ExerciseDetail label="Reps" value={reps} />
-        <ExerciseDetail label="Weight" value={`${weight}kg`} />
-        <ExerciseDetail label="Rest" value={`${rest}s`} />
-      </div>
-    </button>
+        {isShowExerciseName && (
+          <div className="flex flex-col items-start">
+            <div className="text-xs text-gray-500">Id {exerciseId ?? id}</div>
+            <div className="w-[250px] text-left truncate">{exerciseName}</div>
+          </div>
+        )}
+        {!isShowExerciseName && (
+          <ExerciseDetails
+            sets={sets}
+            reps={reps}
+            weight={weight}
+            rest={rest}
+          />
+        )}
+      </button>
+      <button
+        className="w-10 h-18 bg-blue-300"
+        onClick={() => {
+          navigateToExercise();
+        }}
+      >
+        &gt;
+      </button>
+    </div>
   );
 };
