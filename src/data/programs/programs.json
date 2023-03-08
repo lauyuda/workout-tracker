@@ -10,5 +10,12 @@
     "author": "Jeff",
     "splits": [2, 3],
     "units": ["sets", "reps", "weight", "rest"]
+  },
+  {
+    "id": 3,
+    "program": "VertCode Elite",
+    "author": "PJF Performance",
+    "splits": [4],
+    "units": ["sets", "reps", "weight", "rest"]
   }
 ]

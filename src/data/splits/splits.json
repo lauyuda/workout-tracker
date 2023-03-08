@@ -18,7 +18,7 @@
           "weight": 20,
           "time": null,
           "rest": 90,
-          "supersets": []
+          "superset": []
         },
         {
           "exercise": 2,
@@ -27,7 +27,7 @@
           "weight": 15,
           "time": null,
           "rest": 60,
-          "supersets": []
+          "superset": []
         }
       ],
       [
@@ -38,7 +38,7 @@
           "weight": 10,
           "time": null,
           "rest": 90,
-          "supersets": []
+          "superset": []
         },
         {
           "exercise": 2,
@@ -47,7 +47,7 @@
           "weight": 15,
           "time": null,
           "rest": 60,
-          "supersets": []
+          "superset": []
         }
       ]
     ]
@@ -66,7 +66,7 @@
           "weight": 10,
           "time": null,
           "rest": 90,
-          "supersets": []
+          "superset": []
         },
         {
           "exercise": 3,
@@ -75,7 +75,7 @@
           "weight": 15,
           "time": null,
           "rest": 60,
-          "supersets": []
+          "superset": []
         }
       ],
       [
@@ -86,7 +86,7 @@
           "weight": 20,
           "time": null,
           "rest": 90,
-          "supersets": []
+          "superset": []
         },
         {
           "exercise": 3,
@@ -95,7 +95,81 @@
           "weight": 15,
           "time": null,
           "rest": 60,
-          "supersets": []
+          "superset": []
+        }
+      ]
+    ]
+  },
+
+  {
+    "id": 4,
+    "split": "VCE Phase 3",
+    "period": "week",
+    "sessions": [
+      [
+        {
+          "exercise": 8,
+          "sets": 3,
+          "reps": 6,
+          "weight": 17.5,
+          "time": null,
+          "rest": 30,
+          "superset": []
+        },
+        {
+          "exercise": 9,
+          "sets": 4,
+          "reps": 4,
+          "weight": 22.5,
+          "time": null,
+          "rest": 90,
+          "superset": []
+        },
+        {
+          "exercise": 10,
+          "sets": 4,
+          "reps": 4,
+          "weight": 17.5,
+          "time": null,
+          "rest": 90,
+          "superset": [
+            {
+              "exercise": 13,
+              "sets": 4,
+              "reps": 1,
+              "weight": null,
+              "time": null,
+              "rest": 60,
+              "superset": []
+            }
+          ]
+        },
+        {
+          "exercise": 14,
+          "sets": 3,
+          "reps": 12,
+          "weight": null,
+          "time": null,
+          "rest": 30,
+          "superset": []
+        },
+        {
+          "exercise": 12,
+          "sets": 3,
+          "reps": 3,
+          "weight": null,
+          "time": null,
+          "rest": 60,
+          "superset": []
+        },
+        {
+          "exercise": 11,
+          "sets": 3,
+          "reps": 6,
+          "weight": 8,
+          "time": null,
+          "rest": 60,
+          "superset": []
         }
       ]
     ]

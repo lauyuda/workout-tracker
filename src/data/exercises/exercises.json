@@ -1,33 +1,170 @@
 [
   {
     "id": 1,
-    "name": "Squat",
+    "name": "Back Squat",
+    "type": "bar",
     "sets": 3,
     "reps": 12,
     "weight": 10,
     "time": null,
     "rest": 90,
-    "notes": ""
+    "notes": "",
+    "alternative": []
   },
-
   {
     "id": 2,
-    "name": "Dumbbell Bench Press",
+    "name": "Barbell Bench Press",
+    "type": "bar",
     "sets": 3,
     "reps": 12,
     "weight": 10,
     "time": null,
     "rest": 30,
-    "notes": ""
+    "notes": "",
+    "alternative": []
   },
   {
     "id": 3,
     "name": "Overhead Press",
+    "type": "bar",
     "sets": 3,
     "reps": 12,
     "weight": 8.75,
     "time": null,
     "rest": 180,
-    "notes": ""
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 4,
+    "name": "Deadlift",
+    "type": "bar",
+    "sets": 3,
+    "reps": 12,
+    "weight": 8.75,
+    "time": null,
+    "rest": 180,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 5,
+    "name": "Pull Ups",
+    "type": "bodyweight",
+    "sets": 3,
+    "reps": 12,
+    "weight": null,
+    "time": null,
+    "rest": 180,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 6,
+    "name": "Dumbbell Bench Press",
+    "type": "weights",
+    "sets": 3,
+    "reps": 12,
+    "weight": 10,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 7,
+    "name": "Dumbbell Incline Press",
+    "type": "weights",
+    "sets": 3,
+    "reps": 12,
+    "weight": 10,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 8,
+    "name": "Plate Overhead Deep Squat",
+    "type": "weights",
+    "sets": 3,
+    "reps": 12,
+    "weight": 10,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 9,
+    "name": "Weighted Jump High Pull",
+    "type": "weights",
+    "sets": 4,
+    "reps": 4,
+    "weight": 117.5,
+    "time": null,
+    "rest": 90,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 10,
+    "name": "Velocity Squat",
+    "type": "weights",
+    "sets": 3,
+    "reps": 12,
+    "weight": 10,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 11,
+    "name": "Drach RFESS",
+    "type": "weights",
+    "sets": 3,
+    "reps": 12,
+    "weight": 8,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 12,
+    "name": "Non-counter Movement One Leg Pistol Jump",
+    "type": "bodyweight",
+    "sets": 3,
+    "reps": 3,
+    "weight": null,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 13,
+    "name": "15ft Approach Jump",
+    "type": "bodyweight",
+    "sets": 4,
+    "reps": 1,
+    "weight": null,
+    "time": null,
+    "rest": 60,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 14,
+    "name": "Ball of the Foot 1 Leg Turn",
+    "type": "bodyweight",
+    "sets": 3,
+    "reps": 3,
+    "weight": null,
+    "time": null,
+    "rest": 30,
+    "notes": "",
+    "alternative": []
   }
 ]
