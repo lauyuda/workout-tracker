@@ -120,7 +120,7 @@
           "exercise": 9,
           "sets": 4,
           "reps": 4,
-          "weight": 25,
+          "weight": 20,
           "time": null,
           "rest": 90,
           "superset": []
@@ -129,7 +129,7 @@
           "exercise": 10,
           "sets": 4,
           "reps": 4,
-          "weight": 20,
+          "weight": 25,
           "time": null,
           "rest": 90,
           "superset": [
@@ -186,7 +186,7 @@
           "exercise": 9,
           "sets": 4,
           "reps": 4,
-          "weight": 22.5,
+          "weight": 17.5,
           "time": null,
           "rest": 90,
           "superset": []
@@ -195,7 +195,7 @@
           "exercise": 10,
           "sets": 4,
           "reps": 4,
-          "weight": 17.5,
+          "weight": 22.5,
           "time": null,
           "rest": 90,
           "superset": [
