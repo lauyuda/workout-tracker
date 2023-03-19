@@ -11,21 +11,40 @@ import { Superset } from '../exercise/components/superset';
 import { NavBar } from '../navbar/components/navbar';
 
 enum Day {
-  'ONE' = 1,
-  'TWO' = 2,
-  'THREE' = 3,
-  'FOUR' = 4,
-  'FIVE' = 5,
+  SUNDAY = 0,
+  MONDAY = 1,
+  TUESDAY = 2,
+  WEDNESDAY = 3,
+  THURSDAY = 4,
+  FRIDAY = 5,
+  SATURDAY = 6,
 }
-const DAYS = [Day.ONE, Day.TWO, Day.THREE, Day.FOUR, Day.FIVE];
-const DAY_OFFSET = 2;
-const TODAY = new Date().getDay() - DAY_OFFSET;
+
+const DayMap = {
+  [Day.SUNDAY]: 'Sun',
+  [Day.MONDAY]: 'Mon',
+  [Day.TUESDAY]: 'Tue',
+  [Day.WEDNESDAY]: 'Wed',
+  [Day.THURSDAY]: 'Thur',
+  [Day.FRIDAY]: 'Fri',
+  [Day.SATURDAY]: 'Sat',
+};
+
+const DAYS = [
+  Day.SUNDAY,
+  Day.MONDAY,
+  Day.TUESDAY,
+  Day.WEDNESDAY,
+  Day.THURSDAY,
+  Day.FRIDAY,
+  Day.SATURDAY,
+];
+const TODAY = new Date().getDay();
+console.log('new Date().getDay()', new Date().getDay());
 
 export const Workout: NextPage = () => {
   const router = useRouter();
   const { selectedDay: _selectedDay } = router?.query;
-  console.log('new Date().getDay()', new Date().getDay());
-  console.log('_selectedDay', _selectedDay ?? TODAY);
   const [selectedDay, setSelectedDay] = useState(Number(_selectedDay ?? TODAY));
 
   const workouts = getWorkouts();
@@ -46,20 +65,26 @@ export const Workout: NextPage = () => {
   const currentSplitSession = workoutSplit?.sessions?.[0];
 
   const daySelectionShortcutHandler = (e: KeyboardEvent) => {
-    if (e.key === CustomShortcut.DAY_ONE) {
-      setSelectedDay(Day.ONE);
+    if (e.key === CustomShortcut.MONDAY) {
+      setSelectedDay(Day.MONDAY);
     }
-    if (e.key === CustomShortcut.DAY_TWO) {
-      setSelectedDay(Day.TWO);
+    if (e.key === CustomShortcut.TUESDAY) {
+      setSelectedDay(Day.TUESDAY);
     }
-    if (e.key === CustomShortcut.DAY_THREE) {
-      setSelectedDay(Day.THREE);
+    if (e.key === CustomShortcut.WEDNESDAY) {
+      setSelectedDay(Day.WEDNESDAY);
     }
-    if (e.key === CustomShortcut.DAY_FOUR) {
-      setSelectedDay(Day.FOUR);
+    if (e.key === CustomShortcut.THURSDAY) {
+      setSelectedDay(Day.THURSDAY);
     }
-    if (e.key === CustomShortcut.DAY_FIVE) {
-      setSelectedDay(Day.FIVE);
+    if (e.key === CustomShortcut.FRIDAY) {
+      setSelectedDay(Day.FRIDAY);
+    }
+    if (e.key === CustomShortcut.SATURDAY) {
+      setSelectedDay(Day.SATURDAY);
+    }
+    if (e.key === CustomShortcut.SUNDAY) {
+      setSelectedDay(Day.SUNDAY);
     }
   };
 
@@ -91,8 +116,7 @@ export const Workout: NextPage = () => {
               onClick={() => setSelectedDay(day)}
             >
               <div className="w-12 h-12 flex flex-col items-center justify-center">
-                <div className="text-xs text-gray-500">Day</div>
-                <div>{day}</div>
+                {DayMap[day]}
               </div>
             </button>
           );

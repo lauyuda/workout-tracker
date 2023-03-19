@@ -18,7 +18,6 @@ export const ProgramPage: NextPage = () => {
   const splitsInfo = programInfo?.splits?.map((programSplitId) => {
     return splits.find((split) => split.id === programSplitId);
   });
-  console.log('splitsInfo', splitsInfo);
 
   return (
     <div>

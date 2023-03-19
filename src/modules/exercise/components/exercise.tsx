@@ -9,16 +9,7 @@ export const Exercise = ({
   isSuperset = false,
 }: any) => {
   const router = useRouter();
-  const {
-    exercise: exerciseId,
-    id,
-    name,
-    sets,
-    reps,
-    weight,
-    rest,
-    superset,
-  } = exercise;
+  const { exercise: exerciseId, id, name, sets, reps, weight, rest } = exercise;
   const { exercises } = useExercisesContext();
 
   const exerciseName = Boolean(name)
@@ -33,8 +24,6 @@ export const Exercise = ({
       },
     });
   };
-
-  console.log('superset', superset, exercise);
 
   return (
     <div className={`flex ${isSuperset ? '' : 'border rounded'}`}>

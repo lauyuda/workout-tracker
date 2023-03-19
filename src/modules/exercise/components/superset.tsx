@@ -7,7 +7,7 @@ export const Superset = ({
   selectedDay = null,
 }: {
   supersetExercises: Exercise[];
-  selectedDay: any;
+  selectedDay?: any;
 }) => {
   return (
     <div className="border rounded divide-y divide-gray-300">

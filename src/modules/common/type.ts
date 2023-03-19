@@ -5,9 +5,11 @@ export enum CustomShortcut {
   EXERCISES = 'e',
 
   // for day selection
-  DAY_ONE = '1',
-  DAY_TWO = '2',
-  DAY_THREE = '3',
-  DAY_FOUR = '4',
-  DAY_FIVE = '5',
+  SUNDAY = '1',
+  MONDAY = '2',
+  TUESDAY = '3',
+  WEDNESDAY = '4',
+  THURSDAY = '5',
+  FRIDAY = '6',
+  SATURDAY = '7',
 }
