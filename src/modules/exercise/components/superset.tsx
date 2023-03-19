@@ -10,7 +10,7 @@ export const Superset = ({
   selectedDay: any;
 }) => {
   return (
-    <div className="border rounded">
+    <div className="border rounded divide-y divide-gray-300">
       {supersetExercises?.map((supersetExercise) => {
         const { exercise: exerciseId } = supersetExercise;
 

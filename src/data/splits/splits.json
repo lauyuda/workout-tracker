@@ -109,7 +109,73 @@
       [
         {
           "exercise": 8,
+          "sets": 2,
+          "reps": 6,
+          "weight": 20,
+          "time": null,
+          "rest": 30,
+          "superset": []
+        },
+        {
+          "exercise": 9,
+          "sets": 4,
+          "reps": 4,
+          "weight": 25,
+          "time": null,
+          "rest": 90,
+          "superset": []
+        },
+        {
+          "exercise": 10,
+          "sets": 4,
+          "reps": 4,
+          "weight": 20,
+          "time": null,
+          "rest": 90,
+          "superset": [
+            {
+              "exercise": 13,
+              "sets": 4,
+              "reps": 1,
+              "weight": null,
+              "time": null,
+              "rest": 60,
+              "superset": []
+            }
+          ]
+        },
+        {
+          "exercise": 14,
           "sets": 3,
+          "reps": 4,
+          "weight": null,
+          "time": null,
+          "rest": 30,
+          "superset": []
+        },
+        {
+          "exercise": 12,
+          "sets": 3,
+          "reps": 3,
+          "weight": null,
+          "time": null,
+          "rest": 60,
+          "superset": []
+        },
+        {
+          "exercise": 11,
+          "sets": 3,
+          "reps": 6,
+          "weight": 9,
+          "time": null,
+          "rest": 60,
+          "superset": []
+        }
+      ],
+      [
+        {
+          "exercise": 8,
+          "sets": 2,
           "reps": 6,
           "weight": 17.5,
           "time": null,
@@ -147,7 +213,7 @@
         {
           "exercise": 14,
           "sets": 3,
-          "reps": 12,
+          "reps": 4,
           "weight": null,
           "time": null,
           "rest": 30,

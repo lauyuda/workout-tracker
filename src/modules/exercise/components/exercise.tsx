@@ -21,8 +21,6 @@ export const Exercise = ({
   } = exercise;
   const { exercises } = useExercisesContext();
 
-  const [isShowExerciseName, setIsShowExerciseName] = useState(true);
-
   const exerciseName = Boolean(name)
     ? name
     : exercises.find((_exercise) => _exercise.id === exercise.exercise)?.name;
@@ -41,27 +39,19 @@ export const Exercise = ({
   return (
     <div className={`flex ${isSuperset ? '' : 'border rounded'}`}>
       <div className={`w-2 ${isSuperset ? 'bg-green-300' : 'bg-blue-100'}`} />
-      <button
-        className="w-full flex p-3 bg-blue-100"
-        onClick={() => {
-          setIsShowExerciseName((show) => !show);
-        }}
-      >
-        {isShowExerciseName && (
-          <div className="flex flex-col items-start">
-            <div className="text-xs text-gray-500">Id {exerciseId ?? id}</div>
-            <div className="w-[250px] text-left truncate">{exerciseName}</div>
+      <div className="w-full flex p-3 bg-blue-100">
+        <div className="flex flex-col items-start space-y-1">
+          <div className="w-[250px] text-sm text-left truncate pl-1">
+            {exerciseName}
           </div>
-        )}
-        {!isShowExerciseName && (
           <ExerciseDetails
             sets={sets}
             reps={reps}
             weight={weight}
             rest={rest}
           />
-        )}
-      </button>
+        </div>
+      </div>
       <button
         className="w-10 h-18 bg-blue-300"
         onClick={() => {
