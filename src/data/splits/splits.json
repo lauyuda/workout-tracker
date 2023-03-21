@@ -239,5 +239,41 @@
         }
       ]
     ]
+  },
+  {
+    "id": 5,
+    "split": "VCE Phase 4",
+    "period": "week",
+    "sessions": [
+      [
+        {
+          "exercise": 15,
+          "sets": 3,
+          "reps": 5,
+          "weight": null,
+          "time": null,
+          "rest": 60,
+          "superset": []
+        },
+        {
+          "exercise": 16,
+          "sets": 3,
+          "reps": 6,
+          "weight": 5,
+          "time": null,
+          "rest": 60,
+          "superset": []
+        },
+        {
+          "exercise": 17,
+          "sets": 3,
+          "reps": 6,
+          "weight": 20,
+          "time": null,
+          "rest": 90,
+          "superset": []
+        }
+      ]
+    ]
   }
 ]

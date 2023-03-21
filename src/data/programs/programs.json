@@ -15,7 +15,7 @@
     "id": 3,
     "program": "VertCode Elite",
     "author": "PJF Performance",
-    "splits": [4],
+    "splits": [4, 5],
     "units": ["sets", "reps", "weight", "rest"]
   }
 ]

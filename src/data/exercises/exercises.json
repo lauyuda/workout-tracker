@@ -166,5 +166,41 @@
     "rest": 30,
     "notes": "",
     "alternative": []
+  },
+  {
+    "id": 15,
+    "name": "Speed Drop One Foot Jump",
+    "type": "bodyweight",
+    "sets": 3,
+    "reps": 5,
+    "weight": null,
+    "time": null,
+    "rest": 60,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 16,
+    "name": "Non Counter Movement Explosive Pistol",
+    "type": "weights",
+    "sets": 3,
+    "reps": 6,
+    "weight": null,
+    "time": null,
+    "rest": 60,
+    "notes": "",
+    "alternative": []
+  },
+  {
+    "id": 17,
+    "name": "RDL Barbell",
+    "type": "bar",
+    "sets": 3,
+    "reps": 6,
+    "weight": 20,
+    "time": null,
+    "rest": 90,
+    "notes": "",
+    "alternative": []
   }
 ]
