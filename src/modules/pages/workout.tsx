@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import { useEffect, useState } from 'react';
-import { CustomShortcut } from '../common/type';
+import { useState } from 'react';
 import { getPrograms } from '../data/constants/get-programs';
 import { getSplits } from '../data/constants/get-splits';
 import { getWorkouts } from '../data/constants/get-workouts';
@@ -63,36 +62,6 @@ export const Workout: NextPage = () => {
     return split.id === selectedWorkout?.split;
   });
   const currentSplitSession = workoutSplit?.sessions?.[0];
-
-  const daySelectionShortcutHandler = (e: KeyboardEvent) => {
-    if (e.key === CustomShortcut.MONDAY) {
-      setSelectedDay(Day.MONDAY);
-    }
-    if (e.key === CustomShortcut.TUESDAY) {
-      setSelectedDay(Day.TUESDAY);
-    }
-    if (e.key === CustomShortcut.WEDNESDAY) {
-      setSelectedDay(Day.WEDNESDAY);
-    }
-    if (e.key === CustomShortcut.THURSDAY) {
-      setSelectedDay(Day.THURSDAY);
-    }
-    if (e.key === CustomShortcut.FRIDAY) {
-      setSelectedDay(Day.FRIDAY);
-    }
-    if (e.key === CustomShortcut.SATURDAY) {
-      setSelectedDay(Day.SATURDAY);
-    }
-    if (e.key === CustomShortcut.SUNDAY) {
-      setSelectedDay(Day.SUNDAY);
-    }
-  };
-
-  useEffect(function initDaySelectionShortcut() {
-    window.addEventListener('keydown', daySelectionShortcutHandler, false);
-    return () =>
-      window.removeEventListener('keydown', daySelectionShortcutHandler, false);
-  }, []);
 
   const navigateToSplit = () => {
     router.push({

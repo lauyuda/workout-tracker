@@ -1,8 +1,9 @@
+import { Exercise } from '@/modules/exercise/types';
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { getExercises } from '../constants/get-exercises';
 
 export const ExercisesContext = createContext<{
-  exercises: any[];
+  exercises: Exercise[];
 }>({
   exercises: [],
 });

@@ -1,3 +1,16 @@
+export type Exercise = {
+  id: number;
+  name: string;
+  type: string;
+  sets: number;
+  reps: number;
+  weight: number | null;
+  time: number | null;
+  rest: number;
+  notes: string | null;
+  alternative: string[];
+};
+
 export enum ShowState {
   ALL = 'ALL',
   NAME = 'NAME',
