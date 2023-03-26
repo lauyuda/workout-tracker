@@ -9,7 +9,8 @@
     "time": null,
     "rest": 90,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "time": null,
     "rest": 30,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "time": null,
     "rest": 180,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "time": null,
     "rest": 180,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "time": null,
     "rest": 180,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "time": null,
     "rest": 30,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "time": null,
     "rest": 30,
     "notes": "",
-    "alternative": []
+    "alternative": [],
+    "src": null
   },
   {
     "id": 8,
@@ -184,7 +191,7 @@
     "time": null,
     "rest": 60,
     "notes": "",
-    "alternative": [],    
+    "alternative": [],
     "src": "https://www.youtube.com/embed/QB_HhMHL7_8"
   },
   {
@@ -222,7 +229,7 @@
     "weight": null,
     "time": null,
     "rest": 120,
-    "notes": "Aim for about 3/4 per rep. 1 Set = Alternating L-R-L-R, L-L-R-R, L-L-L-R-R-R, L-L-L-L (all left), R-R-R-R (all right). Complete 2 sets.",
+    "notes": "Aim for about 3/4 per rep.\n1 Set = Alternating L-R-L-R, L-L-R-R, L-L-L-R-R-R, L-L-L-L (all left), R-R-R-R (all right).\nComplete 2 sets.",
     "alternative": [],
     "src": "https://www.youtube.com/embed/HzBleiA6IQw"
   },
@@ -235,7 +242,7 @@
     "weight": null,
     "time": null,
     "rest": 90,
-    "notes": "1 ep = over all 3 hurdles. Complete 2 sets, then rest. Set 1 and 2 = double jump. Set 3 and 4 = fast off the ground with deep load up. Set 5 and 6 = fast off the ground, minimal load up (pogo jump).",
+    "notes": "1 rep = over all 3 hurdles.\nComplete 2 sets, then rest.\nSet 1 and 2 = double jump.\nSet 3 and 4 = fast off the ground with deep load up.\nSet 5 and 6 = fast off the ground, minimal load up (pogo jump).",
     "alternative": [],
     "src": "https://www.youtube.com/embed/UF-8ELMpcdI"
   },
@@ -261,7 +268,7 @@
     "weight": 20,
     "time": null,
     "rest": 60,
-    "notes": "Over and back both hurdles with left foot = 1 rep. Complete 2 reps left, then 2 reps right. Complete 4 total sets.",
+    "notes": "Over and back both hurdles with left foot = 1 rep.\nComplete 2 reps left, then 2 reps right.\nComplete 4 total sets.",
     "alternative": [],
     "src": "https://www.youtube.com/embed/Ed8xaG1DDmI"
   },

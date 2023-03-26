@@ -4,9 +4,9 @@ export const NavBar = () => {
   const router = useRouter();
 
   return (
-    <>
+    <div className="bg-blue-100">
       <button
-        className="p-5 border"
+        className="px-5 py-3"
         onClick={() => {
           router.push({
             pathname: '/',
@@ -16,7 +16,7 @@ export const NavBar = () => {
         Workout
       </button>
       <button
-        className="p-5 border"
+        className="px-5 py-3"
         onClick={() => {
           router.push({
             pathname: '/program',
@@ -26,7 +26,7 @@ export const NavBar = () => {
         Programs
       </button>
       <button
-        className="p-5 border"
+        className="px-5 py-3"
         onClick={() => {
           router.push({
             pathname: '/exercise',
@@ -35,6 +35,6 @@ export const NavBar = () => {
       >
         Exercises
       </button>
-    </>
+    </div>
   );
 };

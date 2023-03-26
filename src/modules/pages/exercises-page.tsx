@@ -137,13 +137,16 @@ export const ExercisesPage: NextPage = () => {
             Create new exercise
           </button>
         </div>
-        <div className="sticky top-10 pl-10 border border-red-500 self-start">
+        <div className="sticky top-10 pl-10 self-start">
           <label>Selected {selectedExercise?.name}</label>
-          <iframe
-            width="420"
-            height="315"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY"
-          />
+          <div>
+            <p>Notes:</p>
+            <>{console.log(selectedExercise?.notes)}</>
+            <p className="whitespace-pre-line">{`${selectedExercise?.notes}`}</p>
+          </div>
+          {selectedExercise?.src && (
+            <iframe width="560" height="315" src={selectedExercise.src} />
+          )}
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ export type Exercise = {
   rest: number;
   notes: string | null;
   alternative: string[];
+  src: string | null;
 };
 
 export enum ShowState {
