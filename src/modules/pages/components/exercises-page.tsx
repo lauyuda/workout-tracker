@@ -7,6 +7,7 @@ import { ExerciseInformation } from '../../exercise/components/exercise-informat
 import { ExerciseFilter } from '../../exercise/components/exercise-filter';
 import { ExerciseSearch } from '../../exercise/components/exercise-search';
 import { useExercisesPage } from '../hooks/use-exercises-page';
+import { ExerciseShortenedList } from '@/modules/exercise/components/exercise-shortened-list';
 
 export const ExercisesPage: NextPage = () => {
   const {
@@ -22,10 +23,10 @@ export const ExercisesPage: NextPage = () => {
   return (
     <div>
       <NavBar />
-      <div className="h-full grid grid-cols-2 gap-10 ">
-        <div className="flex justify-end">
-          <div className="w-96">
-            <div className="sticky top-[52px] pt-8 bg-white border-t-4 border-white">
+      <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
+        <div className="flex md:justify-end">
+          <div className="w-full md:w-96">
+            <div className="sticky top-[52px] pt-4 md:pt-8 bg-white border-t-4 border-white">
               <ExerciseSearch
                 filterTypes={filterTypes}
                 setFilterTypes={setFilterTypes}
@@ -36,23 +37,16 @@ export const ExercisesPage: NextPage = () => {
                 filterTypes={filterTypes}
                 setFilterTypes={setFilterTypes}
               />
-              <button className="px-3 py-1 mt-2 mb-4 bg-green-100 hover:bg-green-200 text-sm font-semibold rounded-full">
+              <button className="hidden md:inline-block px-3 py-1 mt-2 mb-4 bg-green-100 hover:bg-green-200 text-sm font-semibold rounded-full">
                 + Create a exercise
               </button>
             </div>
-
-            {exercises?.map((exercise) => {
-              return (
-                <ExerciseShortened
-                  key={exercise.id}
-                  exercise={exercise}
-                  isSelected={exercise.id === selectedExercise?.id}
-                  selectExercise={() => setSelectedExercise(exercise)}
-                />
-              );
-            })}
-            {exercises.length === 0 && query && <NoExercise search={query} />}
-            {exercises.length === 0 && !query && <ExerciseShortenedSkeletal />}
+            <ExerciseShortenedList
+              exercises={exercises}
+              selectedExercise={selectedExercise}
+              setSelectedExercise={setSelectedExercise}
+              query={query}
+            />
           </div>
         </div>
         <ExerciseInformation exercise={selectedExercise} />

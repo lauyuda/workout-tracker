@@ -15,7 +15,7 @@ type Props = {
 
 export const ExerciseFilter = ({ filterTypes, setFilterTypes }: Props) => {
   return (
-    <div className="flex items-center pt-2 space-x-1">
+    <div className="flex items-center pt-2 space-x-1 justify-center md:justify-start">
       {FILTER_TYPES.map((filterType) => {
         const isFiltered = filterTypes.includes(filterType);
 
@@ -23,7 +23,7 @@ export const ExerciseFilter = ({ filterTypes, setFilterTypes }: Props) => {
           <button
             key={filterType}
             className={`p-2 rounded ${
-              isFiltered ? 'bg-blue-500 text-white' : 'hover:bg-blue-500/50'
+              isFiltered ? 'bg-blue-500 text-white' : 'md:hover:bg-blue-500/50'
             }`}
             onClick={() => {
               if (isFiltered) {

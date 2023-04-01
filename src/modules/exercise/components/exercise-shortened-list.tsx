@@ -1,8 +1,10 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, Fragment, SetStateAction } from 'react';
 import { ExerciseShortened } from '../../exercise/components/exercise-shortened';
 import { ExerciseShortenedSkeletal } from '../../exercise/components/exercise-shortened-skeletal';
 import { NoExercise } from '../../exercise/components/no-exercise';
 import { Exercise } from '../types';
+import { ExerciseInformation } from './exercise-information';
+import { ExerciseInformationMobile } from './exercise-information-mobile';
 type Props = {
   exercises: Exercise[];
   selectedExercise: Exercise | null;
@@ -19,13 +21,17 @@ export const ExerciseShortenedList = ({
   return (
     <>
       {exercises?.map((exercise) => {
+        const isSelected = exercise.id === selectedExercise?.id;
+
         return (
-          <ExerciseShortened
-            key={exercise.id}
-            exercise={exercise}
-            isSelected={exercise.id === selectedExercise?.id}
-            selectExercise={() => setSelectedExercise(exercise)}
-          />
+          <Fragment key={exercise.id}>
+            <ExerciseShortened
+              exercise={exercise}
+              isSelected={isSelected}
+              selectExercise={() => setSelectedExercise(exercise)}
+            />
+            {isSelected && <ExerciseInformationMobile exercise={exercise} />}
+          </Fragment>
         );
       })}
       {exercises.length === 0 && query && <NoExercise search={query} />}

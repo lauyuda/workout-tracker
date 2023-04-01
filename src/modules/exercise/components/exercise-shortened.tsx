@@ -41,7 +41,7 @@ export const ExerciseShortened = ({
     <button
       className={`w-full flex items-center px-3 py-3 border-l-4 ${
         isSelected
-          ? 'text-blue-600 border-blue-500 font-semibold bg-gray-100 rounded-r-full'
+          ? 'text-blue-600 border-blue-500 font-semibold bg-gray-100 md:rounded-r-full'
           : 'text-gray-400 hover:text-blue-600/60 border-transparent'
       }`}
       onClick={() => selectExercise()}

@@ -1,3 +1,4 @@
+import { Exercise, ExerciseType } from '../types';
 import { ExerciseDetails } from './exercise-details';
 import { ExerciseTypeIcon } from './exercise-type-icon';
 
@@ -12,15 +13,19 @@ const NoExerciseSelected = () => {
   );
 };
 
-export const ExerciseInformation = ({ exercise }: { exercise: any }) => {
+export const ExerciseInformation = ({
+  exercise,
+}: {
+  exercise: Exercise | null;
+}) => {
   return (
-    <div className="sticky top-16 self-start pt-5">
+    <div className="hidden md:block sticky top-16 self-start pt-5">
       {!exercise && <NoExerciseSelected />}
       {exercise && (
         <div className="w-[560px] space-y-4">
           <h1 className="flex items-end text-2xl p-4 bg-gray-100 rounded space-x-3">
             <span>{exercise.name}</span>
-            <ExerciseTypeIcon type={exercise.type} size={28} />
+            <ExerciseTypeIcon type={exercise.type as ExerciseType} size={28} />
           </h1>
           <div className="p-4 bg-gray-100 rounded">
             <ExerciseDetails
@@ -31,7 +36,7 @@ export const ExerciseInformation = ({ exercise }: { exercise: any }) => {
             />
           </div>
           <div className="p-4 bg-gray-100 rounded">
-            <label className="text-gray-500 text-lg">Notes</label>
+            <label className="text-gray-500 text-xs">Notes</label>
             {
               <p className="pt-2 whitespace-pre-line">
                 {exercise?.notes ? `${exercise.notes}` : '-'}

@@ -35,7 +35,7 @@ export const ExercisePage: NextPage = () => {
           <h1 className="font-semibold text-4xl">Exercise Page</h1>
         </div>
         <div>
-          <ExerciseInformation exercise={exerciseInfo} />
+          <ExerciseInformation exercise={exerciseInfo ?? null} />
         </div>
       </div>
     </div>

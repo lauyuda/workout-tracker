@@ -26,7 +26,7 @@ export const ExerciseSearch = ({
   };
 
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 justify-center md:justify-start">
       <input
         className="border py-2 px-4 focus:outline-none focus:border-gray-400 rounded"
         type="search"
