@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import { getPrograms } from '../data/constants/get-programs';
-import { NavBar } from '../navbar/components/navbar';
+import { getPrograms } from '../../data/constants/get-programs';
+import { NavBar } from '../../navbar/components/navbar';
 
 export const ProgramsPage: NextPage = () => {
   const programs = getPrograms();

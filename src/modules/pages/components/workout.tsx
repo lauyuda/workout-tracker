@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { useState } from 'react';
-import { getPrograms } from '../data/constants/get-programs';
-import { getSplits } from '../data/constants/get-splits';
-import { getWorkouts } from '../data/constants/get-workouts';
-import { useExercisesContext } from '../data/hooks/exercises-context';
-import { Exercise } from '../exercise/components/exercise';
-import { Superset } from '../exercise/components/superset';
-import { NavBar } from '../navbar/components/navbar';
+import { getPrograms } from '../../data/constants/get-programs';
+import { getSplits } from '../../data/constants/get-splits';
+import { getWorkouts } from '../../data/constants/get-workouts';
+import { useExercisesContext } from '../../data/hooks/exercises-context';
+import { Exercise } from '../../exercise/components/exercise';
+import { Superset } from '../../exercise/components/superset';
+import { NavBar } from '../../navbar/components/navbar';
 
 enum Day {
   SUNDAY = 0,

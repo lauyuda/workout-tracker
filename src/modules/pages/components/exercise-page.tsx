@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import { GoBackButton } from '../common/components/go-back-button';
-import { useExercisesContext } from '../data/hooks/exercises-context';
-import { NavBar } from '../navbar/components/navbar';
+import { GoBackButton } from '../../common/components/go-back-button';
+import { useExercisesContext } from '../../data/hooks/exercises-context';
+import { NavBar } from '../../navbar/components/navbar';
 
 export const ExercisePage: NextPage = () => {
   const { exercises } = useExercisesContext();

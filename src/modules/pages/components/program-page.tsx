@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import { GoBackButton } from '../common/components/go-back-button';
-import { getPrograms } from '../data/constants/get-programs';
-import { getSplits } from '../data/constants/get-splits';
-import { NavBar } from '../navbar/components/navbar';
-import { Split } from '../split/components/split';
+import { GoBackButton } from '../../common/components/go-back-button';
+import { getPrograms } from '../../data/constants/get-programs';
+import { getSplits } from '../../data/constants/get-splits';
+import { NavBar } from '../../navbar/components/navbar';
+import { Split } from '../../split/components/split';
 
 export const ProgramPage: NextPage = () => {
   const router = useRouter();

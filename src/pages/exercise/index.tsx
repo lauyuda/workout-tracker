@@ -1,3 +1,3 @@
-import { ExercisesPage } from '@/modules/pages/exercises-page';
+import { ExercisesPage } from '@/modules/pages/components/exercises-page';
 
 export default ExercisesPage;

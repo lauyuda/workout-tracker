@@ -1,3 +1,3 @@
-import { ProgramPage } from '@/modules/pages/program-page';
+import { ProgramPage } from '@/modules/pages/components/program-page';
 
 export default ProgramPage;

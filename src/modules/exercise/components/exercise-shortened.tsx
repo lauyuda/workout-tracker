@@ -1,6 +1,7 @@
 import { useExercisesContext } from '@/modules/data/hooks/exercises-context';
 import { useRouter } from 'next/router';
 import { ExerciseDetails } from './exercise-details';
+import { ExerciseTypeIcon } from './exercise-type-icon';
 
 type Props = {
   exercise: any;
@@ -14,7 +15,16 @@ export const ExerciseShortened = ({
   selectExercise = () => null,
 }: Props) => {
   const router = useRouter();
-  const { exercise: exerciseId, id, name, sets, reps, weight, rest } = exercise;
+  const {
+    exercise: exerciseId,
+    id,
+    name,
+    type,
+    sets,
+    reps,
+    weight,
+    rest,
+  } = exercise;
   const { exercises } = useExercisesContext();
 
   const exerciseName = Boolean(name)
@@ -28,14 +38,16 @@ export const ExerciseShortened = ({
   // };
 
   return (
-    <button className="flex" onClick={() => selectExercise()}>
-      <div className={`w-full flex p-3 ${isSelected ? 'bg-blue-100' : ''}`}>
-        <div className="flex flex-col items-start">
-          <div className="text-xs text-gray-500">Id {exerciseId ?? id}</div>
-          <div className="w-[250px] text-left truncate">{exerciseName}</div>
-        </div>
-        <ExerciseDetails sets={sets} reps={reps} weight={weight} rest={rest} />
-      </div>
+    <button
+      className={`w-full flex items-start px-3 py-3 border-l-4 ${
+        isSelected
+          ? 'text-blue-600 border-blue-500 font-semibold bg-gray-100 rounded-r-full'
+          : 'text-gray-400 hover:text-blue-600/60 border-transparent'
+      }`}
+      onClick={() => selectExercise()}
+    >
+      <div className="w-[350px] text-left truncate">{exerciseName}</div>
+      <ExerciseTypeIcon type={type} />
     </button>
   );
 };
