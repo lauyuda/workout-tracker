@@ -1,3 +1,4 @@
+import { ExerciseInformation } from '@/modules/exercise/components/exercise-information';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { GoBackButton } from '../../common/components/go-back-button';
@@ -28,13 +29,15 @@ export const ExercisePage: NextPage = () => {
   return (
     <div>
       <NavBar />
-      <h1>Exercise Page</h1>
-      <GoBackButton />
-      <div>Name: {exerciseInfo?.name}</div>
-      <div>Personal best record:</div>
-      <div>Sets: {exerciseInfo?.sets}</div>
-      <div>Reps: {exerciseInfo?.reps}</div>
-      <div>Rest: {exerciseInfo?.rest}</div>
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex items-center pt-4 space-x-2">
+          <GoBackButton />
+          <h1 className="font-semibold text-4xl">Exercise Page</h1>
+        </div>
+        <div>
+          <ExerciseInformation exercise={exerciseInfo} />
+        </div>
+      </div>
     </div>
   );
 };

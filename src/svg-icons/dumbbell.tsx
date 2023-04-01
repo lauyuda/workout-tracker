@@ -1,9 +1,9 @@
-export const Dumbbell = () => {
+export const Dumbbell = ({ size = 20 }: { size?: number }) => {
   return (
     <svg
       fill="currentColor"
-      height="20"
-      width="20"
+      height={size}
+      width={size}
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
