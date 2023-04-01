@@ -24,7 +24,7 @@ export const ExercisesPage: NextPage = () => {
       <NavBar />
       <div className="h-full flex justify-center">
         <div className="w-96 bg-white">
-          <div className="sticky top-[55px] pt-8 bg-white border-t-4 border-white">
+          <div className="sticky top-[52px] pt-8 bg-white border-t-4 border-white">
             <ExerciseSearch
               filterTypes={filterTypes}
               setFilterTypes={setFilterTypes}
@@ -35,7 +35,7 @@ export const ExercisesPage: NextPage = () => {
               filterTypes={filterTypes}
               setFilterTypes={setFilterTypes}
             />
-            <button className="px-3 py-1 my-2 bg-green-100 hover:bg-green-200 text-sm font-semibold rounded-full">
+            <button className="px-3 py-1 mt-2 mb-4 bg-green-100 hover:bg-green-200 text-sm font-semibold rounded-full">
               + Create a exercise
             </button>
           </div>
