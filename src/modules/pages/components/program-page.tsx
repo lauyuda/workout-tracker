@@ -23,7 +23,7 @@ export const ProgramPage: NextPage = () => {
     <div>
       <NavBar />
       <div className="h-full flex flex-col items-center justify-center pb-4">
-        <div className="flex justify-center">
+        <div className="w-[350px]">
           <GoBackButton />
         </div>
         <div className="space-y-2">

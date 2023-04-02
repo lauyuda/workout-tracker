@@ -1,3 +1,4 @@
+import { REST_PROGRAM_ID } from '@/modules/split/constants';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { useState } from 'react';
@@ -39,7 +40,6 @@ const DAYS = [
   Day.SATURDAY,
 ];
 const TODAY = new Date().getDay();
-console.log('new Date().getDay()', new Date().getDay());
 
 export const Workout: NextPage = () => {
   const router = useRouter();
@@ -64,6 +64,9 @@ export const Workout: NextPage = () => {
   const currentSplitSession = workoutSplit?.sessions?.[0];
 
   const navigateToSplit = () => {
+    if (workoutProgram?.id === REST_PROGRAM_ID) {
+      return;
+    }
     router.push({
       pathname: `/program/${workoutProgram?.id}`,
       query: { selectedDay },
@@ -95,12 +98,17 @@ export const Workout: NextPage = () => {
           })}
         </div>
         <button
-          className="w-64 h-16 mt-4 border rounded"
+          className="mt-4 text-gray-800 font-semibold"
           onClick={() => navigateToSplit()}
         >
-          {workoutProgram?.program} - {workoutProgram?.author}
+          <span>{workoutProgram?.program}</span>
+          {workoutProgram?.author && (
+            <span>{` - ${workoutProgram.author} >`}</span>
+          )}
         </button>
-        {Boolean(workoutSplit) && <div>{workoutSplit?.split}</div>}
+        {Boolean(workoutSplit) && (
+          <div className="text-sm text-gray-600">{workoutSplit?.split}</div>
+        )}
         {Boolean(currentSplitSession) && (
           <div className="mt-5 mx-5 space-y-2">
             {currentSplitSession?.map((splitExercise) => {

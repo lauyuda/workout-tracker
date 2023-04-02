@@ -1,7 +1,14 @@
 import { useExercisesContext } from '@/modules/data/hooks/exercises-context';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { ExerciseDetails } from './exercise-details';
+
+type Props = {
+  exercise: any;
+  selectedDay?: number | null;
+  isSuperset?: boolean;
+  isFirstSuperset?: boolean;
+  isLastSuperset?: boolean;
+};
 
 export const Exercise = ({
   exercise,
@@ -9,7 +16,7 @@ export const Exercise = ({
   isSuperset = false,
   isFirstSuperset = false,
   isLastSuperset = false,
-}: any) => {
+}: Props) => {
   const router = useRouter();
   const { exercise: exerciseId, id, name, sets, reps, weight, rest } = exercise;
   const { exercises } = useExercisesContext();
@@ -31,14 +38,14 @@ export const Exercise = ({
     <div className={`flex ${isSuperset ? '' : 'rounded'}`}>
       <div
         className={`w-2 ${
-          isSuperset ? 'bg-green-300' : 'bg-blue-100 rounded-l'
+          isSuperset ? 'bg-green-600' : 'bg-blue-100 rounded-l'
         } ${isFirstSuperset ? 'rounded-tl' : ''} ${
           isLastSuperset ? 'rounded-bl' : ''
         }`}
       />
       <div className="w-full flex p-3 bg-blue-100">
         <div className="flex flex-col items-start space-y-1">
-          <div className="max-w-[250px] text-sm text-left truncate pl-1">
+          <div className="w-[250px] text-sm text-left truncate pl-1">
             {exerciseName}
           </div>
           <ExerciseDetails
