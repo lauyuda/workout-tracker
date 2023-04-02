@@ -17,27 +17,28 @@ export const ProgramsPage: NextPage = () => {
   return (
     <div>
       <NavBar />
-      <h1>Programs Page</h1>
-      <div>To sort by name in alphabetical order</div>
-      <div>To allow searching of program</div>
-      <div>To allow adding of program</div>
-      {programs?.map((program) => {
-        if (program?.program === 'Rest') {
-          return null;
-        }
-
-        return (
-          <button
-            key={program?.id}
-            className="w-64 h-24 border rounded"
-            onClick={() => navigateToSplit(program?.id)}
-          >
-            {program?.program} - {program?.author}
+      <div className="h-full flex justify-center py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <button className="hidden md:inline-block w-64 h-24 flex items-center justify-center bg-green-100 md:hover:bg-green-200 font-semibold rounded">
+            + Create a Program
           </button>
-        );
-      })}
-      <div className="w-36 h-10 flex items-center justify-center border border-black rounded">
-        + Program
+          {programs?.map((program) => {
+            if (program?.program === 'Rest') {
+              return null;
+            }
+
+            return (
+              <button
+                key={program?.id}
+                className="group w-64 h-24 border border-blue-500 md:hover:bg-blue-500 md:hover:text-white rounded"
+                onClick={() => navigateToSplit(program?.id)}
+              >
+                <h2 className="font-semibold">{program?.program}</h2>
+                <h3 className="text-sm text-gray-500 md:group-hover:text-white">{`by ${program?.author}`}</h3>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

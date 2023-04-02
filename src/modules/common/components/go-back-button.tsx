@@ -21,7 +21,7 @@ export const GoBackButton = () => {
         returnToPrevPage();
       }}
     >
-      {`< Back`}
+      &lt; Back
     </button>
   );
 };
