@@ -14,12 +14,18 @@ const NoExerciseSelected = () => {
 };
 
 export const ExerciseInformation = ({
+  isExercisePage = false,
   exercise,
 }: {
+  isExercisePage?: boolean;
   exercise: Exercise | null;
 }) => {
   return (
-    <div className="hidden md:block sticky top-16 self-start pt-5">
+    <div
+      className={`hidden md:block sticky top-16 self-start ${
+        isExercisePage ? '' : 'pt-5'
+      }`}
+    >
       {!exercise && <NoExerciseSelected />}
       {exercise && (
         <div className="w-[560px] space-y-4">
@@ -44,12 +50,7 @@ export const ExerciseInformation = ({
             }
           </div>
           {exercise?.src && (
-            <iframe
-              width="560"
-              height="315"
-              className="rounded"
-              src={exercise.src}
-            />
+            <iframe className="iframe rounded" src={exercise.src} />
           )}
         </div>
       )}

@@ -25,7 +25,7 @@ export const NavBar = () => {
             className={`px-5 py-3 font-bold border-b-4  ${
               router.pathname === path
                 ? 'border-blue-600 text-blue-600'
-                : 'border-transparent text-gray-400 hover:text-blue-600/60'
+                : 'border-transparent text-gray-400 md:hover:text-blue-600/60'
             }`}
             onClick={() => {
               router.push({

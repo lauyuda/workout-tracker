@@ -16,12 +16,12 @@ export const GoBackButton = () => {
 
   return (
     <button
-      className="flex items-center justify-center text-4xl text-gray-500 hover:text-gray-700"
+      className="py-2 text:sm text-gray-500 md:hover:text-gray-700"
       onClick={() => {
         returnToPrevPage();
       }}
     >
-      {`<`}
+      {`< Back`}
     </button>
   );
 };

@@ -1,4 +1,5 @@
 import { ExerciseInformation } from '@/modules/exercise/components/exercise-information';
+import { ExerciseInformationMobile } from '@/modules/exercise/components/exercise-information-mobile';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { GoBackButton } from '../../common/components/go-back-button';
@@ -29,14 +30,20 @@ export const ExercisePage: NextPage = () => {
   return (
     <div>
       <NavBar />
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex items-center pt-4 space-x-2">
+      <div className="flex flex-col md:items-center justify-center">
+        <div className="md:w-[560px] flex items-center pl-4 md:pl-0">
           <GoBackButton />
-          <h1 className="font-semibold text-4xl">Exercise Page</h1>
         </div>
         <div>
-          <ExerciseInformation exercise={exerciseInfo ?? null} />
+          <ExerciseInformation
+            isExercisePage={true}
+            exercise={exerciseInfo ?? null}
+          />
         </div>
+        <ExerciseInformationMobile
+          isExercisePage={true}
+          exercise={exerciseInfo ?? null}
+        />
       </div>
     </div>
   );
