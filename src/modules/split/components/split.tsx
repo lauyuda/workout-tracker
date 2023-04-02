@@ -2,10 +2,8 @@ import { Session } from '@/modules/session/components/session';
 
 export const Split = ({ split, splitSessions }: any) => {
   return (
-    <div className="m-5 p-5 border rounded space-y-2">
-      <div className="text-lg">
-        Split: <span className="font-semibold">{split}</span>
-      </div>
+    <div className="rounded space-y-2">
+      <h2 className="text-lg">{split} </h2>
       {splitSessions.map((session: any, index: any) => (
         <Session
           key={index}

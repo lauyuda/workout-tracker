@@ -20,13 +20,13 @@ enum Day {
 }
 
 const DayMap = {
-  [Day.SUNDAY]: 'Sun',
-  [Day.MONDAY]: 'Mon',
-  [Day.TUESDAY]: 'Tue',
-  [Day.WEDNESDAY]: 'Wed',
-  [Day.THURSDAY]: 'Thur',
-  [Day.FRIDAY]: 'Fri',
-  [Day.SATURDAY]: 'Sat',
+  [Day.SUNDAY]: 'Su',
+  [Day.MONDAY]: 'Mo',
+  [Day.TUESDAY]: 'Tu',
+  [Day.WEDNESDAY]: 'We',
+  [Day.THURSDAY]: 'Th',
+  [Day.FRIDAY]: 'Fr',
+  [Day.SATURDAY]: 'Sa',
 };
 
 const DAYS = [
@@ -73,67 +73,65 @@ export const Workout: NextPage = () => {
   return (
     <div>
       <NavBar />
-      <div className="py-4 px-4 space-x-3">
-        {DAYS.map((day) => {
-          const isSelected = selectedDay === day;
-          return (
-            <button
-              key={day}
-              className={`rounded-full border ${
-                isSelected ? 'border-blue-400 bg-blue-100' : ''
-              }`}
-              onClick={() => setSelectedDay(day)}
-            >
-              <div className="w-12 h-12 flex flex-col items-center justify-center">
-                {DayMap[day]}
-              </div>
-            </button>
-          );
-        })}
-      </div>
-      <div>Selected day: {selectedDay}</div>
-      <div>Selected program: {workoutProgram?.program}</div>
-
-      <button
-        className="w-64 h-24 border rounded"
-        onClick={() => navigateToSplit()}
-      >
-        {workoutProgram?.program} - {workoutProgram?.author}
-      </button>
-      {Boolean(workoutSplit) && (
-        <div>Selected split: {workoutSplit?.split}</div>
-      )}
-      {Boolean(currentSplitSession) && (
-        <div className="mt-5 mx-5 space-y-2">
-          <div>Selected exercises: </div>
-          {currentSplitSession?.map((splitExercise) => {
-            const { exercise: exerciseId, superset } = splitExercise;
-            const name = exercises.find(
-              (exercise) => exercise.id === exerciseId
-            )?.name;
-
-            const hasSuperset = superset.length > 0;
-            if (!hasSuperset) {
-              return (
-                <Exercise
-                  key={exerciseId}
-                  exercise={splitExercise}
-                  selectedDay={selectedDay}
-                />
-              );
-            }
-
-            const supersetExercises = [splitExercise, ...superset];
+      <div className="flex flex-col items-center justify-center pb-4">
+        <div className="sticky top-[52px] w-full flex justify-center pt-4 pb-2 bg-white rounded -space-x-1">
+          {DAYS.map((day) => {
+            const isSelected = selectedDay === day;
             return (
-              <Superset
-                key={exerciseId}
-                supersetExercises={supersetExercises}
-                selectedDay={selectedDay}
-              />
+              <button
+                key={day}
+                className={`rounded ${
+                  isSelected
+                    ? 'text-blue-700 bg-blue-100'
+                    : 'text-gray-400 md:hover:text-blue-400'
+                }`}
+                onClick={() => setSelectedDay(day)}
+              >
+                <div className="w-12 py-1 flex flex-col items-center justify-center">
+                  {DayMap[day]}
+                </div>
+              </button>
             );
           })}
         </div>
-      )}
+        <button
+          className="w-64 h-16 mt-4 border rounded"
+          onClick={() => navigateToSplit()}
+        >
+          {workoutProgram?.program} - {workoutProgram?.author}
+        </button>
+        {Boolean(workoutSplit) && <div>{workoutSplit?.split}</div>}
+        {Boolean(currentSplitSession) && (
+          <div className="mt-5 mx-5 space-y-2">
+            {currentSplitSession?.map((splitExercise) => {
+              const { exercise: exerciseId, superset } = splitExercise;
+              const name = exercises.find(
+                (exercise) => exercise.id === exerciseId
+              )?.name;
+
+              const hasSuperset = superset.length > 0;
+              if (!hasSuperset) {
+                return (
+                  <Exercise
+                    key={exerciseId}
+                    exercise={splitExercise}
+                    selectedDay={selectedDay}
+                  />
+                );
+              }
+
+              const supersetExercises = [splitExercise, ...superset];
+              return (
+                <Superset
+                  key={exerciseId}
+                  supersetExercises={supersetExercises}
+                  selectedDay={selectedDay}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

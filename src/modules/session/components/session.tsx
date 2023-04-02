@@ -3,12 +3,12 @@ import { Superset } from '@/modules/exercise/components/superset';
 
 export const Session = ({ session, number }: any) => {
   return (
-    <div className="flex items-center border rounded space-x-4 px-4 py-4 bg-slate-300">
-      <div className="flex flex-col items-center">
-        <div className="text-sm text-gray-500">Session</div>
-        <div>{number}</div>
-      </div>
-      <div className="space-y-2">
+    <div className="flex flex-col items-start border rounded px-3 pt-1 pb-3 bg-slate-300">
+      <h3>
+        <label className="text-xs text-gray-500">Session </label>
+        <span>{number}</span>
+      </h3>
+      <div className="pt-1 space-y-1">
         {session?.map((sessionExercise: any) => {
           const { exercise: exerciseId, superset } = sessionExercise;
 

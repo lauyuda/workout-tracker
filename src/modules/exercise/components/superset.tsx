@@ -10,8 +10,8 @@ export const Superset = ({
   selectedDay?: any;
 }) => {
   return (
-    <div className="border rounded divide-y divide-gray-300">
-      {supersetExercises?.map((supersetExercise) => {
+    <div className="divide-y divide-gray-300">
+      {supersetExercises?.map((supersetExercise, index) => {
         const { exercise: exerciseId } = supersetExercise;
 
         return (
@@ -20,6 +20,8 @@ export const Superset = ({
             exercise={supersetExercise}
             selectedDay={selectedDay}
             isSuperset={true}
+            isFirstSuperset={index === 0}
+            isLastSuperset={index === supersetExercises.length - 1}
           />
         );
       })}

@@ -22,16 +22,20 @@ export const ProgramPage: NextPage = () => {
   return (
     <div>
       <NavBar />
-      <h1>Program Page</h1>
-      <div>{programInfo?.program}</div>
-      <GoBackButton />
-      {splitsInfo?.map((split) => (
-        <Split
-          key={split?.id}
-          split={split?.split}
-          splitSessions={split?.sessions}
-        />
-      ))}
+      <div className="h-full flex flex-col items-center justify-center pb-4">
+        <div className="flex justify-center">
+          <GoBackButton />
+        </div>
+        <div className="space-y-2">
+          {splitsInfo?.map((split) => (
+            <Split
+              key={split?.id}
+              split={split?.split}
+              splitSessions={split?.sessions}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
